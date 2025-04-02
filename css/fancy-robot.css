@@ -36,6 +36,16 @@
   border-bottom-left-radius: 0;
   border-bottom-right-radius: 0;
   left: 35px;
+  animation: rotateEye 2s ease-in-out infinite;
+}
+
+@keyframes rotateEye {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
 .robot-eye-right {
@@ -47,6 +57,19 @@
   border-radius: 50%;
   border: 5px solid black;
   right: 40px;
+  animation: disappearEye 2s ease-in-out infinite;
+}
+
+@keyframes disappearEye {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+  0% {
+    opacity: 1;
+  }
 }
 
 .robot-ear-left {
@@ -61,6 +84,24 @@
   );
   border-radius: 10px;
   left: -5px;
+  animation: changeColor 2s ease-in-out infinite;
+}
+
+@keyframes changeColor {
+  0% {
+    background: linear-gradient(
+      0deg,
+      rgba(36, 39, 39, 1) 0%,
+      rgba(253, 253, 253, 1) 100%
+    );
+  }
+  100% {
+    background: linear-gradient(
+      0deg,
+      rgba(253, 253, 253, 1) 0%,
+      rgba(36, 39, 39, 1) 100%
+    );
+  }
 }
 
 .robot-ear-right {
@@ -77,6 +118,19 @@
   border-top-right-radius: 15px;
   right: -15px;
   transform: rotate(90deg);
+  animation: moveEar 2s ease-in-out infinite;
+}
+
+@keyframes moveEar {
+  0% {
+    top: 80px;
+  }
+  50% {
+    top: 70px;
+  }
+  100% {
+    top: 80px;
+  }
 }
 
 .robot-nose {
@@ -91,11 +145,50 @@
   );
 }
 
+.robot-nose:hover {
+  background: linear-gradient(
+    0deg,
+    rgba(215, 0, 0, 1) 0%,
+    rgba(255, 0, 0, 1) 100%
+  );
+  box-shadow: 0 0 10px 2px rgba(255, 0, 0, 1);
+  cursor: pointer;
+}
+
 .robot-teeth {
   position: absolute;
   bottom: 20px;
   display: flex;
   gap: 3px;
+  animation: moveTeeth 2s ease-in-out infinite alternate;
+}
+
+@keyframes moveTeeth {
+  0% {
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 20px;
+  }
+  25% {
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 30px;
+  }
+  50% {
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 20px;
+  }
+  75% {
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 10px;
+  }
+  100% {
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 20px;
+  }
 }
 
 .robot-tooth {
@@ -103,6 +196,22 @@
   height: 20px;
   background: linear-gradient(0deg, rgb(39, 36, 36) 0%, rgb(255, 0, 0) 100%);
   border: 2px solid black;
+  animation: toothColorCycle 3s infinite;
+}
+
+@keyframes toothColorCycle {
+  0% {
+    background: linear-gradient(0deg, rgb(39, 36, 36) 0%, rgb(255, 0, 0) 100%);
+  }
+  33% {
+    background: linear-gradient(0deg, rgb(0, 255, 0) 0%, rgb(0, 39, 36) 100%);
+  }
+  66% {
+    background: linear-gradient(0deg, rgb(0, 0, 255) 0%, rgb(39, 36, 39) 100%);
+  }
+  100% {
+    background: linear-gradient(0deg, rgb(39, 36, 36) 0%, rgb(255, 0, 0) 100%);
+  }
 }
 
 .robot-hair-style {
@@ -124,6 +233,16 @@
   border-top-left-radius: 50px;
   margin: 5px;
   opacity: 50%;
+  animation: change-height 2s ease-in-out infinite alternate;
+}
+
+@keyframes change-height {
+  0% {
+    height: 50px;
+  }
+  100% {
+    height: 70px;
+  }
 }
 
 .robot-hair-two {
@@ -137,6 +256,16 @@
   border-radius: 20px;
   border-top-right-radius: 30px;
   margin: 5px;
+  animation: change-width 2s ease-in-out infinite alternate;
+}
+
+@keyframes change-width {
+  0% {
+    width: 30px;
+  }
+  100% {
+    width: 50px;
+  }
 }
 
 .robot-hair-three {
@@ -150,4 +279,5 @@
   border-radius: 25px;
   border-bottom-left-radius: 50px;
   margin: 5px;
+  animation: change-height 2s ease-in-out infinite alternate;
 }
